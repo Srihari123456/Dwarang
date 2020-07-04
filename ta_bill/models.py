@@ -59,7 +59,7 @@ class TA_Bill(models.Model):
     
     no_of_enclosures = models.IntegerField()
     enclosure_date = models.CharField(max_length=10)
-    Admissible_Amount =  models.DecimalField(decimal_places=2,max_digits=1000) 
+    Eligible_Amount =  models.DecimalField(decimal_places=2,max_digits=1000) 
     AdvanceDraw =  models.DecimalField(decimal_places=2,max_digits=1000) 
     Net_Claim_Admissible =  models.DecimalField(decimal_places=2,max_digits=1000) 
     To_be_paid_by_iith =  models.DecimalField(decimal_places=2,max_digits=1000)

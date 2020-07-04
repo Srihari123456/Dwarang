@@ -68,7 +68,7 @@ class TAForm(forms.ModelForm):
     no_of_enclosures = forms.IntegerField(label='No.of Enclosures*',)
     enclosure_date = forms.CharField(label='Enclosure Date*',
                                  widget=forms.TextInput(attrs={"placeholder": "Enclosure Date"}))
-    Admissible_Amount =  forms.DecimalField(label='Admissible Amount*',initial=0.00)
+    Eligible_Amount =  forms.DecimalField(label='Eligible Amount*',initial=0.00)
     AdvanceDraw =  forms.DecimalField(label='Advance Draw*',initial=0.00)
     Net_Claim_Admissible =  forms.DecimalField(label='Net Claim Admissible*',initial=0.00)
     To_be_paid_by_iith =  forms.DecimalField(label='To be paid by iith*',initial=0.00)
@@ -102,7 +102,7 @@ class TAForm(forms.ModelForm):
             'other_exp_item_2',            'other_exp_amount_2',            'other_exp_billdetails_2',
             'other_exp_item_3',            'other_exp_amount_3',            'other_exp_billdetails_3',            
             'Total_amount_B',
-            'no_of_enclosures',  'enclosure_date',    'Admissible_Amount',    'AdvanceDraw',
+            'no_of_enclosures',  'enclosure_date',    'Eligible_Amount',    'AdvanceDraw',
             'Net_Claim_Admissible', 'To_be_paid_by_iith', 'To_be_recovered_by_iith',
             'amount',   'amt_in_words',
             'IFSC_Code',            'Bank_name_branch',            'Bank_account_number',
