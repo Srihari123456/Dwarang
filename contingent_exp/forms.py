@@ -4,7 +4,7 @@ from .models import Contingent_exp
 
 class ContingentForm(forms.ModelForm):
     dt1       = forms.CharField(label='Date',widget=forms.TextInput(attrs={"placeholder":"Date"}))
-    description1 = forms.CharField(label='Purpose',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
+    description1 = forms.CharField(label='Description',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
 
     amount1       = forms.DecimalField(initial=0.00)  
