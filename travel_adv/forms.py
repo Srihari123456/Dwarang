@@ -15,27 +15,27 @@ CHOICES = (
 )
 
 class TravelForm(forms.ModelForm):
-    name        = forms.CharField(label='Name',widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
-    designation = forms.CharField(label='Designation',widget=forms.TextInput(attrs={"placeholder":"Your Designation"}))
-    department  = forms.CharField(label='Department',widget=forms.TextInput(attrs={"placeholder":"Your department"}))
-    dt1        = forms.CharField(label='From Date',widget=forms.TextInput(attrs={"placeholder":"From Date"}))
-    dt2        = forms.CharField(label='To Date',widget=forms.TextInput(attrs={"placeholder":"To Date"}))
-    basic_pay       = forms.DecimalField(initial=0.00)
+    name        = forms.CharField(label='Name*',widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
+    designation = forms.CharField(label='Designation*',widget=forms.TextInput(attrs={"placeholder":"Your Designation"}))
+    department  = forms.CharField(label='Department*',widget=forms.TextInput(attrs={"placeholder":"Your department"}))
+    dt1        = forms.CharField(label='From Date*',widget=forms.TextInput(attrs={"placeholder":"From Date"}))
+    dt2        = forms.CharField(label='To Date*',widget=forms.TextInput(attrs={"placeholder":"To Date"}))
+    basic_pay       = forms.DecimalField(label='Basic Pay*',initial=0.00)
     #accomodation_charges       = forms.DecimalField(initial=0.00)
-    other_expenditures = forms.DecimalField(initial=0.00)
-    details  = forms.CharField(label='Details',widget=forms.TextInput(attrs={"placeholder":"Details"}))
-    employee_id = forms.CharField(label='ID',widget=forms.TextInput(attrs={"placeholder":"Your employee_id"}))
-    IFSC_Code   = forms.CharField(label='IFSC Code',widget=forms.TextInput(attrs={"placeholder":"IFSC Code"}))
-    journeyclass = forms.ChoiceField(choices=CHOICES,required=True)
-    purpose = forms.CharField(widget=forms.Textarea(attrs={"placeholder":"Purpose","class"      : "new-class-name two",
+    other_expenditures = forms.DecimalField(label='Other Expenditures*',initial=0.00)
+    details  = forms.CharField(label='Details*',widget=forms.TextInput(attrs={"placeholder":"Details"}))
+    employee_id = forms.CharField(label='ID*',widget=forms.TextInput(attrs={"placeholder":"Your employee_id"}))
+    IFSC_Code   = forms.CharField(label='IFSC Code*',widget=forms.TextInput(attrs={"placeholder":"IFSC Code"}))
+    journeyclass = forms.ChoiceField(label='Class of Journey*',choices=CHOICES,required=True)
+    purpose = forms.CharField(label='Purpose*',widget=forms.Textarea(attrs={"placeholder":"Purpose","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
 
-    Bank_name_branch = forms.CharField(widget=forms.Textarea(attrs={"placeholder": "Your description", "class": "new-class-name two",
+    Bank_name_branch = forms.CharField(label='Bank Name and Branch*',widget=forms.Textarea(attrs={"placeholder": "Your description", "class": "new-class-name two",
                                      "id": "my-id-for-textarea", "rows": 5, 'cols': 19}))
-    Bank_account_number =  forms.CharField(label='Bank Account Number',widget=forms.TextInput(attrs={"placeholder":"Bank Account Number"}))
+    Bank_account_number =  forms.CharField(label='Bank Account Number*',widget=forms.TextInput(attrs={"placeholder":"Bank Account Number"}))
 
     
-    Total_amount       = forms.DecimalField(initial=0.00)
+    Total_amount       = forms.DecimalField(label='Total Amount*',initial=0.00)
     class Meta:
         model = Travel_adv
         fields = [

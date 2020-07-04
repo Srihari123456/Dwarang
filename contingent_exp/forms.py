@@ -3,39 +3,39 @@ from django import forms
 from .models import Contingent_exp
 
 class ContingentForm(forms.ModelForm):
-    dt1       = forms.CharField(label='Date',widget=forms.TextInput(attrs={"placeholder":"Date"}))
-    description1 = forms.CharField(label='Description',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
+    dt1       = forms.CharField(label='Date*',widget=forms.TextInput(attrs={"placeholder":"Date"}))
+    description1 = forms.CharField(label='Description*',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
 
-    amount1       = forms.DecimalField(initial=0.00)  
+    amount1       = forms.DecimalField(label='Amount(A)*',initial=0.00)
 
 
     dt2       = forms.CharField(label='Date',required=False,widget=forms.TextInput(attrs={"placeholder":"Date"}))
-    description2 = forms.CharField(required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
+    description2 = forms.CharField(label='Description',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
-    amount2       = forms.DecimalField(initial=0.00)    
+    amount2       = forms.DecimalField(label='Amount(B)',initial=0.00)
     
     dt3       = forms.CharField(label='Date',required=False,widget=forms.TextInput(attrs={"placeholder":"Date"}))
-    description3 = forms.CharField(required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
+    description3 = forms.CharField(label='Description',required=False,widget=forms.Textarea(attrs={"placeholder":"Your description","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
-    amount3       = forms.DecimalField(initial=0.00)    
+    amount3       = forms.DecimalField(label='Amount(C)',initial=0.00)
     
-    Total_amount       = forms.DecimalField(initial=0.00)
+    Total_amount       = forms.DecimalField(label='Total Amount(A+B+C)*',initial=0.00)
     #totamount = amount1+amount2+amount3
     
-    amount_words = forms.CharField(required=False,widget=forms.Textarea(attrs={"placeholder":"Amount in words","class"      : "new-class-name two",
+    amount_words = forms.CharField(label='Amount in words*',required=False,widget=forms.Textarea(attrs={"placeholder":"Amount in words","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
-    station     = forms.CharField(label='Station',widget=forms.TextInput(attrs={"placeholder":"Your Station"}))
-    name        = forms.CharField(label='Name',widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
-    employee_id = forms.CharField(label='ID', widget=forms.TextInput(attrs={"placeholder": "Your ID"}))
-    address =  forms.CharField(required=False,widget=forms.Textarea(attrs={"placeholder":"Address","class"      : "new-class-name two",
+    station     = forms.CharField(label='Station*',widget=forms.TextInput(attrs={"placeholder":"Your Station"}))
+    name        = forms.CharField(label='Name*',widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
+    employee_id = forms.CharField(label='ID*', widget=forms.TextInput(attrs={"placeholder": "Your ID"}))
+    address =  forms.CharField(label='Address*',required=False,widget=forms.Textarea(attrs={"placeholder":"Address","class"      : "new-class-name two",
                                     "id"         : "my-id-for-textarea","rows"       : 5,'cols'       : 19}))
     
-    IFSC_Code   = forms.CharField(label='IFSC Code',widget=forms.TextInput(attrs={"placeholder":"IFSC Code"}))
-    Bank_name_branch = forms.CharField(
+    IFSC_Code   = forms.CharField(label='IFSC Code*',widget=forms.TextInput(attrs={"placeholder":"IFSC Code"}))
+    Bank_name_branch = forms.CharField(label='Bank Name and Branch*',
         widget=forms.Textarea(attrs={"placeholder": "Your description", "class": "new-class-name two",
                                      "id": "my-id-for-textarea", "rows": 5, 'cols': 19}))
-    Bank_account_number = forms.CharField(label='Bank Account Number',widget=forms.TextInput(attrs={"placeholder": "Bank Account Number"}))
+    Bank_account_number = forms.CharField(label='Bank Account Number*',widget=forms.TextInput(attrs={"placeholder": "Bank Account Number"}))
                         
     
     
