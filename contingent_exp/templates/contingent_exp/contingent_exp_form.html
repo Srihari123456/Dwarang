@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% load static %}
+<html>
+    <head>
+	<link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
+        <title>Contingent Expenditure Form</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+			table {
+			  border-collapse: collapse;
+			}
+
+			table, td, th {
+			  border: 1px solid black;
+
+			}
+        </style>
+    </head>
+
+	<body>
+		<div class='wrapper'>
+			<div class='header'>
+			<img src="{{base_dir}}\dwarang_site\static\images\logo.jpg"  width="170" height="160"  />
+			</div>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+<!--			<img src="{% static 'img7.png' %}" alt="jock" width="100%"  style='z-index:-2;position:absolute;' /><br> -->
+<h1 style='text-align:center;'><u>CONTINGENT EXPENDITURE</u></h1>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+<table >
+	<tr>
+	<td style="padding-left:15px;padding-top:10px;width=130px">Date</td>
+	<td style="padding-left:70px;padding-top:10px">Description</td>
+	<td style="padding-left:30px;padding-top:10px;width=170px">Amount(Rs.)</td>
+	</tr>
+
+	<tr>
+	<td style="padding-left:15px;padding-top:10px;width=130px"> {{ object.dt1 }}</td>
+	<td style="padding-left:70px;padding-top:10px">{{ object.description1 }} </td>
+	<td style="padding-left:30px;padding-top:10px;width=170px">{{ object.amount1 }} </td>
+	</tr>
+
+	<tr>
+	<td style="padding-left:15px;padding-top:10px;width=130px"> {{ object.dt2 }}</td>
+	<td style="padding-left:70px;padding-top:10px">{{ object.description2 }} </td>
+	<td style="padding-left:30px;padding-top:10px;width=170px">{{ object.amount2 }} </td>
+	</tr>
+
+	<tr>
+	<td style="padding-left:15px;padding-top:10px;width=130px"> {{ object.dt3 }}</td>
+	<td style="padding-left:70px;padding-top:10px">{{ object.description3 }} </td>
+	<td style="padding-left:30px;padding-top:10px;width=170px">{{ object.amount3 }} </td>
+	</tr>
+
+
+	<tr>
+	<td colspan=2 style='text-align:right;padding-right:25px;padding-top:5px'>Total</td>
+	<td style="padding-left:30px;padding-top:10px;width=170px">{{ object.Total_amount }}</td>
+	</tr>
+
+
+	<tr>
+	<td colspan=3 style='text-align:center;padding-top:5px'>(Rupees <br>{{ object.amount_words }}<br>  Only.)</td>
+	</tr>
+
+</table>
+
+
+			<p>
+				Certified that the expenditure claimed is not more than the amount actually spent.
+			<br>
+			 Station&nbsp;&nbsp;:&nbsp;{{ object.station }} <br>
+			 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ today }} <br>
+			</p>
+			<p style='margin-left:450px;'>
+		Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br>
+		Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ object.name }}<br>
+		Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ object.address }}<br>
+		</p>
+		<h2>Deputy Registrar(F & A)</h2>
+		Bank name and Branch&nbsp;:&nbsp;{{ object.Bank_name_branch }}<br>
+		Bank Account Number&nbsp;&nbsp;:&nbsp;{{ object.Bank_account_number }}<br>
+		IFSC Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ object.IFSC_Code }}
+		
+			
+			
+			
+		</div>
+		
+		 
+		
+	</body>
+</html>

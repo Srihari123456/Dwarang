@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/gateway.css' %}" rel="stylesheet" type="text/css">
+
+<br><br>
+
+<center ><h1 style="color:gold;">WELCOME {{name|upper}}!</h1>
+	<marquee style="color:yellow;">Note: Ensure that you delete all the previously applied forms before querying a new one.An invalid option takes you to the form signup page.</marquee>
+	<table >
+		<tr>
+			<td  style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a href="../../../ta_bill/pdfsec/{{name}}/{{employee_id}}/?download=12" style="decoration:none;color:black;">
+					<span id="3a" onmouseover="changeTexta('Download the pdf')" onmouseout="changebacka('Download')">Download</span></a>
+			</td>
+			<td style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="../../../../dashboard/actions/tabill_gateway" style="decoration:none;color:black;">
+					<span id="3f" onmouseover="changeTextf('CHANGE FORM APPLICANT')" onmouseout="changebackf('TA BILL')">TA BILL</span></a>
+			</td>
+			<td  style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a  href="../../../ta_bill/delete/{{name}}/{{employee_id}}/" style="decoration:none;color:black;">
+					<span id="3b" onmouseover="changeTextb('Delete previous forms')" onmouseout="changebackb('Delete')">Delete</span></a>
+			</td>
+ 	</tr>
+		<tr>
+			<td  style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="../../ta_bill/pdfsec/{{name}}/{{employee_id}}/" style="decoration:none;color:black;">
+					<span id="3c" onmouseover="changeTextc('See how it looks')" onmouseout="changebackc('View')">View</span></a>
+			</td>
+			<td style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a href="../../ta_bill/create/" style="decoration:none;color:black;">
+					<span id="3d" onmouseover="changeTextd('Apply for TA-Bill')" onmouseout="changebackd('Apply')">Apply</span></a>
+			</td>
+			<td  style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="../../ta_bill/update/{{name}}/{{employee_id}}/" style="decoration:none;color:black;">
+					<span id="3e" onmouseover="changeTexte('Make changes')" onmouseout="changebacke('Update')">Update</span></a>
+			</td>
+		</tr>
+	</table>
+</center>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Dwarang - A Web Based Python Django Framework
+</title>
+<style>
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/gif" sizes="16x16">
+    
+	<link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% static 'js/gateway.js' %}"></script>
+</head>
+<body id="bg" style="background-image: url('{% static "images/bgimg1.jpg"%}');">
+
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-color:#E16D33;height:13%;">
+ <a href="/" >
+        <img src="{% static 'images/logo.jpg' %}"  width="100" height="100" style='z-index:+2;position:absolute;left:0px;top:0px;' /></a>
+        <div class="container">{% csrf_token %}
+            {% if not user.is_active %}
+
+              <a class="navbar-brand mr-4" href="/login/create_acc/" style="font-size:30px">Dashboard</a>
+              {% else %}
+			  
+              <a class="navbar-brand mr-4" href="/dashboard" style="font-size:30px">Dashboard</a>
+              {% endif %}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/" style="font-size:20px">Home</a>
+              <a class="nav-item nav-link" href="/about" style="font-size:20px">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                <h5 class="nav-item nav-link" style="font-size:20px"> {{user.username}}</h5>
+                <a class="nav-item nav-link" href="{% url 'login:logout' %}" style="font-size:20px">Logout</a>
+
+
+              {% else %}
+                <a class="nav-item nav-link" href="/login/" style="font-size:20px">Register</a>
+                <a class="nav-item nav-link" href="/login/create_acc/" style="font-size:20px">Login</a>
+
+
+              {% endif %}
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+<span id="top"></span>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+{% block content %}
+
+<br><br><br><br>
+<center ><h1 style="color:gold;font-size:68px;"> DWARANG</h1><br><h2 style="color:gold;">  THE MODERN DAY DATA HANDLER</h2></center>
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}
+
+{% block reg %}
+
+{% endblock reg %}
+{% block footer %}
+
+
+<div style="background-color:#060504 ;opacity=1;margin-bottom:0%; ">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2" style="color:white;text-align:center;">Dwarang </h2>
+              <p style="color:white;text-align:center;font-size:17px;">“Digitization increases productivity in everyday office life”. The project
+ is structured to fulfil its aim which is to use digitization to improve 
+ service, reduce costs and increase efficiency.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://www.youtube.com/"><span class="icon-youtube"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+		  <center>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2" style="color:white;text-align:center">Dig Deeper</h2>
+              <ul class="list-unstyled" style="color:white;text-align:center">
+                <li style="margin-left:0%">
+				<a href="https://www.facebook.com/iithyderabad/" target="_blank" class="py-2 d-block" ><img src="{% static 'images/facebook_logo.png' %}" alt="Facebook" width="40" height="40" style='z-index:+2;position:absolute;' /></a>
+				<br></li>
+				<a href="https://twitter.com/IITHyderabad" target="_blank" class="py-2 d-block" ><img src="{% static 'images/twitter_logo.png' %}" alt="Twitter" width="40" height="40" style='z-index:+2;position:absolute;' /></a>
+				<br></li>
+				<a href="https://www.linkedin.com/school/indian-inst-of-technology-hyderabad/" target="_blank" class="py-2 d-block" ><img src="{% static 'images/Linkedin_logo.png' %}" alt="LinkedIn" width="80" height="40" style='z-index:+2;position:absolute;margin-left:-20px' /></a>
+				<br></li>
+				<a href="https://github.com/IITH" target="_blank" class="py-2 d-block" ><img src="{% static 'images/github_logo.png' %}" alt="Github" width="40" height="40" style='z-index:+2;position:absolute;' /></a>
+				<br></li>
+                
+              </ul>
+            </div>
+          </div>
+		  </center>	
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2" style="text-align:center;color:white">Customer Support</h2>
+              <ul class="list-unstyled" style="color:white;text-align:center">
+                <li><a href="/" class="py-2 d-block">Go to home</a></li>
+                <li><a href="#top" class="py-2 d-block">Go top</a></li>
+                
+                <li><a href="/about" class="py-2 d-block">About Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2" style="color:white;text-align:center;">Have a Question?</h2>
+            	<div class="block-23 mb-3">
+	              <ul style="color:white">
+	                <li><span class="icon icon-map-marker"></span><span class="text"> College of Engineering - Guindy
+                        Anna University
+                        Sardar patel Road, Chennai - 600078,
+                        TamilNadu, India. </span></li>
+	                <li><span class="icon icon-phone"></span><span class="text">9901017871</span></li>
+	                <li><span class="icon icon-envelope"></span><span class="text">srihari961112@gmail.com</span></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p style="color:white">
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made by <a href="https://www.linkedin.com/in/srihari-s-99aab9193/" target="_blank">Srihari</a>
+  </p>
+          </div>
+        </div>
+      </div>
+{% endblock footer %}
+
+
+</body>
+
+
+</html>

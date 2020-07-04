@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Certificate A Form</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+			table {
+			  border-collapse: collapse;
+			}
+
+			table, td, th {
+			  border: 1px solid black;
+
+			}
+        </style>
+		<link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
+    </head>
+
+	<body>
+		<div class='wrapper'>
+			<div class='header'>
+			<img src="{{base_dir}}\dwarang_site\static\images\logo.jpg"  width="170" height="160"  />
+			</div>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+<!--			<img src="{% static 'img7.png' %}" alt="jock" width="100%"  style='z-index:-2;position:absolute;' /><br> -->
+
+			<h6 style='text-align:center;'><u>CERTIFICATE A</u><br>To be filled by the Employee</h6>
+				<p style='text-align:center;'>(To be completed in the case of Patients who are not admitted in hospital for treatment)</p>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+				<table>
+				<tr>
+				<td style="padding-left:5px;padding-top:10px;width=40%">Name of the employee</td>
+				<td style="padding-left:5px;padding-top:10px;width=26%">Designation</td>
+				<td style="padding-left:5px;padding-top:10px;width=26%">Emp.ID</td>
+				</tr>
+				<tr>
+				<td style="padding-left:5px;padding-top:10px;width=40%">{{object.name}}</td>
+				<td style="padding-left:5px;padding-top:10px;width=26%">{{object.designation}}</td>
+				<td style="padding-left:5px;padding-top:10px;width=26%">{{object.employee_id}}</td>
+				</tr>
+				</table>
+				<br>
+			Certified that I have taken treatment for the following:
+			<br>
+				<table>
+
+				<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">01</td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">Name of the patient</td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">{{object.patient_name}}</td>
+				</tr>
+
+				<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">02</td>
+				<td style="padding-left:20px;padding-top:10px;width=300px">Age <br>Relationship with the employee </td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">{{object.patient_age}}<br>{{object.employee_rel}}</td>
+				</tr>
+
+				<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">03</td>
+				<td style="padding-left:20px;padding-top:10px;width=300px">Name of the Doctor and address</td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">{{object.doctor_address}}</td>
+				</tr>
+
+
+				<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">04</td>
+				<td style="padding-left:20px;padding-top:10px;width=300px">Name of the disease</td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">{{object.disease}}</td>
+				</tr>
+
+
+				<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">05</td>
+				<td style="padding-left:20px;padding-top:10px;width=300px">Duration of treatment</td>
+				<td style="padding-left:35px;padding-top:10px;width=300px">From date&nbsp;:&nbsp;{{object.dt1}}<br>To &nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;:&nbsp;{{object.dt2}}</td>
+				</tr>
+
+
+				</table>
+
+				<h6 style='text-align:center;'>Details of treatment and claim of reimbursement: </h6>
+				<p><b>A. Consultation fee and fee for injection(s): </b><br> (Attach separate sheet, if necessary):</p>
+
+
+			<table>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">SI.</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">Date(s) of Consultation*</td>
+				<td style="padding-left:5px;padding-top:10px;width=155px">Consultation Fee paid</td>
+				<td style="padding-left:5px;padding-top:10px;width=255px">Fee paid for intravenous/ Intra-muscular/ Subcutaneous injections </td>
+			</tr>
+
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">1</td>
+				<td style="padding-left:25px;padding-top:10px;width=180px">{{object.Consult_dt1}}</td>
+				<td style="padding-left:20px;padding-top:10px;width=155px">{{object.Consult_fee1}} </td>
+				<td style="padding-left:45px;padding-top:10px;width=255px">{{object.Injection_fee1}} </td>
+			</tr>
+
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">2</td>
+				<td style="padding-left:25px;padding-top:10px;width=180px">{{object.Consult_dt2}}</td>
+				<td style="padding-left:20px;padding-top:10px;width=155px">{{object.Consult_fee2}} </td>
+				<td style="padding-left:45px;padding-top:10px;width=255px">{{object.Injection_fee2}} </td>
+			</tr>
+			</table>
+
+
+
+			<p><b>B. Details of medicines: </b><br> (Attach separate sheet, if necessary):</p>
+			<table>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">SI.</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">Name of the medicine*</td>
+				<td style="padding-left:5px;padding-top:10px;width=110px">Quantity</td>
+				<td style="padding-left:15px;padding-top:10px;width=105px">Price</td>
+				<td style="padding-left:15px;padding-top:10px;width=180px">Cash Memo No.</td>
+			</tr>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">1</td>
+				<td style="padding-left:25px;padding-top:10px;width=180px">{{object.Med_name1}}</td>
+				<td style="padding-left:15px;padding-top:10px;width=110px">{{object.Quantity1}} </td>
+				<td style="padding-left:15px;padding-top:10px;width=105px">{{object.Price1}}</td>
+				<td style="padding-left:35px;padding-top:10px;width=180px">{{object.Med_CashMemoNo1}} </td>
+			</tr>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">2</td>
+				<td style="padding-left:25px;padding-top:10px;width=180px">{{object.Med_name2}}</td>
+				<td style="padding-left:15px;padding-top:10px;width=110px">{{object.Quantity2}} </td>
+				<td style="padding-left:15px;padding-top:10px;width=105px">{{object.Price2}}</td>
+				<td style="padding-left:35px;padding-top:10px;width=180px">{{object.Med_CashMemoNo2}} </td>
+				</tr>
+			</table>
+
+
+			<p><b>C. Details of x-ray, laboratory tests, investigations, etc.: </b><br> (Attach separate sheet, if necessary):</p>
+			<table>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">SI.</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">Name of the diagnostic test*</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">Name of the diagnostic Centre/Hospital </td>
+				<td style="padding-left:15px;padding-top:10px;width=180px">Amount paid </td>
+			</tr>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">1</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">{{object.DiagTest_name1}} </td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">{{object.DiagTest_center1}} </td>
+				<td style="padding-left:15px;padding-top:10px;width=180px">{{object.Diagnostic_Test_price1}} </td>
+			</tr>
+			<tr>
+				<td style="padding-left:15px;padding-top:10px;width=60px">2</td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">{{object.DiagTest_name2}} </td>
+				<td style="padding-left:5px;padding-top:10px;width=180px">{{object.DiagTest_center2}} </td>
+				<td style="padding-left:15px;padding-top:10px;width=180px">{{object.Diagnostic_Test_price2}} </td>
+			</tr>
+			</table>
+
+
+			<h6>Total Claim Amount  (A+B+C) :{{object.Total_amount}}. <br><br>* Photocopy of the prescriptions and Original cash memos/receipts should be enclosed. </h6>
+
+			I certified that:
+			<ol>
+			<li> The above named patient is / was under doctor treatment and was not given pre-natal or post-natal treatment.</li>
+			<li>The consultation was done at the consulting room of the AMA/residence of the patient. </li>
+			<li>Injection(s) was administered at the consulting room of the AMA/residence of the patient.</li>
+			<li>The injections administered were not / were for immunizing of prophylactic purposes.</li>
+
+			<li>The medicines prescribed by Doctor in this connection were essential for the recovery / prevention of serious deterioration of the condition of the patient</li>
+			<li>The medicines are neither stocked with the AMA for supply to private patients and do not include proprietary preparations for which cheaper substances of equal
+			therapeutic value are available nor are preparations which are primarily foods, toilets or disinfectants. </li>
+			<li> The X-Ray, Laboratory tests, investigations, etc., were necessary and were undertaken on doctor advice. </li>
+			<li> The doctor referred the patient to Dr.{{object.RefDoc}} for specialist consultation and that the necessary approval as required under the rules was obtained</li>
+			</ol>
+
+			<p>
+			 Station&nbsp;&nbsp;:&nbsp;{{ object.station }} <br>
+			 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ today }} <br>
+			</p>
+			<p style='margin-left:450px;'>
+		Signature of {{object.name}}
+		</p>
+			
+			 
+		</div>
+	 	
+		 
+		
+	</body>
+</html>

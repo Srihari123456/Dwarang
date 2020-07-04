@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Travelling Allowance Form</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+		<link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
+    </head>
+ 
+	<body>
+		<div class='wrapper'>
+			<div class='header'>
+			<img src="{{base_dir}}\dwarang_site\static\images\logo.jpg"  width="170" height="160"  />
+			</div>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+			<h1 style='text-align:center;'><u>APPROVAL FOR TOUR & TA ADVANCE</u></h1>
+			<hr style="border: 10px solid gold;border-radius: 5px;">
+			<p>
+				Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{object.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Staff.No/Roll.No&nbsp;:&nbsp; {{object.employee_id}}<br>
+				Designation&nbsp;:&nbsp;{{object.designation}}<br>
+				Department&nbsp;: {{object.department}}<br>
+				Basic Pay&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Rs.{{object.basic_pay}} per month<br>
+				Proposed Dates of Journey : {{object.dt1}} to {{object.dt2}}<br>
+				Purpose of Journey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {{object.purpose}}<br>
+
+				<ol>
+				<li>Proposed Class of Journey : {{object.journeyclass}} </li>
+<!--				<li> Estimated of Accommodation Charges : {{object.accommodation_charges}} </li> -->
+				<li> Estimate of Other Expenditures to be incurred( including accommodation)  : {{object.other_expenditures}} <br>
+				(Details <u>{{object.details}}</u>)</li>
+				</ol>
+				<h6 style='text-align:center;'>Total Advance Requested : {{object.Total_amount}}</h6>
+			</p>
+			There is no unsettled advance against my name. <h6 style='text-align:right;'>Employee/Student</h6>
+		</div>
+		<hr style="border: 10px solid gold;border-radius: 5px;">
+		Journey is approved. <br><br>
+		<h6>Head of the Department/ Director </h6>
+		Chargeable Head: TA and DA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Seminar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Training&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Others
+		<br><br>
+		<table>
+		<tr>
+		<td  style="border: 1px solid black;width=300px;padding-left:2px;padding-top:5px;">
+		  T A No.______________________________
+		</td>
+		<td style="text-align:right">
+		<h6>Deputy Registrar (F & A)</h6>
+		</td>
+		</tr>
+		</table>
+		<hr style="border: 10px solid gold;border-radius: 5px;">
+		Approved TA Advance of Rs. __________ <br>
+		(Rupees ______________________________________________________________________).
+		<h6 style='text-align:right;'>Registrar</h6>
+		<hr style="border: 10px solid gold;border-radius: 5px;">
+		<b>
+		Bank name and Branch&nbsp;:&nbsp;{{ object.Bank_name_branch }}<br>
+		Bank Account Number&nbsp;&nbsp;:&nbsp;{{ object.Bank_account_number }}<br>
+		IFSC Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ object.IFSC_Code }}
+		</b>
+		<h6 style='text-align:right;'>Employee/Student</h6>
+ 
+		
+	</body>
+</html>

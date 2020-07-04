@@ -1,0 +1,51 @@
+table {
+  border-collapse: collapse;
+  width:90%;
+}
+
+table, td, th {
+  border: none;
+  text-align: center;
+}
+tr{
+	line-height:1550%;
+
+}
+td{
+font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+td a{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1.5s;
+  box-shadow: 0 9px black;
+}
+td:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px yellow;
+  transform: translateY(200px) translateX(200px);
+}
+td a:after{
+content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 1.5s;
+}
+td:hover a {
+  padding-right: 85px;
+
+}
+
+td:hover a:after {
+  opacity: 1;
+  right: 0;
+}

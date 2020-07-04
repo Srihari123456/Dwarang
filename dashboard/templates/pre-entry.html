@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+table {
+  border-collapse: collapse;
+  width:90%;
+}
+
+table, td, th {
+  border: none;
+  text-align: center;
+}
+tr{
+	line-height:1550%;
+
+}
+</style>
+<br><br>
+<center style="color:yellow;">
+	<h3 style="color:yellow;">Enter the valid name and the employee-id on which you want to perform the form actions:</h3><br>
+	<b style="font-size:28px;">
+	<form method="post">{% csrf_token %}
+	{% for field  in form %}
+				<tr style="text-align:justify;">
+					<td>{{field.label_tag}}</td>
+					<td>{{field}}</td>
+					<br><br>
+				</tr>&nbsp;&nbsp;&nbsp;&nbsp;
+
+			{% endfor %}
+	<input type="submit" value="Activate Form Queries" style="background-color:orange;">
+	</form>
+	</b>
+</center>
+
+{% endblock %}

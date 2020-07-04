@@ -1,0 +1,399 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\def\inputGnumericTable{}
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+%\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+%\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Dwarang - A Web based Python-Django Framework for Official Purposes}
+\author{Srihari.S under the guidance of Dr.G.V.V.Sharma}
+
+
+\maketitle
+\section {\textbf{Introduction}}
+This project has been carried out under the guidance of Dr.G.V.V.Sharma (IIT-Hyderabad) during the Summer Research Internship undertaken in 2020(May-July), which is sponsored by Indian Academy Of Sciences. Dwarang is a software where we can display data onto a pdf forms of IITH where data is entered through html forms.
+
+
+\section {\textbf{Installation}}
+First clone the repository using git clone https://github.com/Srihari123456/Dwarang.git
+\subsection{Windows}
+\begin{enumerate}
+	\item Install python3.8
+	\item pip install virtualenv
+\end{enumerate}
+\subsection{Linux}
+\begin{enumerate}
+	\item sudo apt-get install python-pip
+	\item sudo pip install virtualenv
+\end{enumerate}
+Then do pip install -r requirements.txt 
+(Note: This installs Django and the required software.)
+%\begin{lstlisting}  \end{lstlisting}
+
+
+\section {\textbf{Running the project on Django local server}}
+
+\subsection{\textbf{Type the below commands on console window}}
+\begin{enumerate}
+\item  cd dwarang\_root \\
+\item  virtualenv env\_dwarang (sets the virtual environment)\\
+\item  To activate the virtual environment:\\
+	In windows: env\_dwarang$\backslash$scripts$\backslash$activate \\
+	In linux: source env\_dwarang/bin/activate \\
+\item   python manage.py migrate (sets all the database tables)\\
+\item   python manage.py runserver (starts the local Django server)\\
+\item  Type the url 127.0.0.1:8080 in your browser \\
+\end{enumerate}
+
+\section{\textbf{Structuring The Application Directory}}
+\begin{flushleft}
+\texttt{-{}-}dwarang\_root (folder)\\
+\qquad \texttt{-{}-}db.sqlite3 \\
+\qquad \texttt{-{}-}manage.py  \\
+\qquad \texttt{-{}-}login (folder) \\
+\qquad \texttt{-{}-}dashboard (folder) \\
+\qquad \texttt{-{}-}reimbursement (folder) \\
+\qquad \texttt{-{}-}ta\_bill (folder) \\
+\qquad \texttt{-{}-}screenshots (folder) \\
+\qquad \texttt{-{}-}requirements.txt \\
+\qquad \texttt{-{}-}contingent\_exp (folder)\\
+\qquad \texttt{-{}-}cert\_a (folder)\\ 
+
+\qquad \texttt{-{}-}telephone (folder) \\
+\qquad \qquad \texttt{-{}-}\_\_pycache\_\_ (folder) \\ 
+\qquad \qquad \texttt{-{}-}templates (folder)\\
+\qquad \qquad \texttt{-{}-}migrations (folder)\\
+\qquad \qquad \texttt{-{}-}\_\_init\_\_.py \\  
+\qquad \qquad \texttt{-{}-}admin.py \\
+\qquad \qquad \texttt{-{}-}apps.py \\
+\qquad \qquad \texttt{-{}-}forms.py \\
+\qquad \qquad \texttt{-{}-}models.py \\ 
+\qquad \qquad \texttt{-{}-}tests.py \\    
+\qquad \qquad \texttt{-{}-}urls.py \\
+\qquad \qquad \texttt{-{}-}views.py \\
+
+\qquad \texttt{-{}-}dwarang\_site (folder) \\
+\qquad \qquad \texttt{-{}-}\_\_pycache\_\_ (folder) \\ 
+\qquad \qquad \texttt{-{}-}templates (folder)\\
+\qquad \qquad \texttt{-{}-}static (folder)\\
+\qquad \qquad \texttt{-{}-}\_\_init\_\_.py \\  
+\qquad \qquad \texttt{-{}-}asgi.py \\
+\qquad \qquad \texttt{-{}-}settings.py \\     
+\qquad \qquad \texttt{-{}-}urls.py \\
+\qquad \qquad \texttt{-{}-}utils.py \\
+\qquad \qquad \texttt{-{}-}views.py \\
+\qquad \qquad \texttt{-{}-}wsgi.py \\
+
+
+\end{flushleft}
+
+\section{\textbf{Uses of all files}}
+\begin{enumerate}
+\item  \_\_init\_\_.py : Indicates that this directory is a python package. \\
+\item  models.py : Contains all the classes which will be converted into database tables.\\
+\item  forms.py : Used to render the forms to the user.\\
+\item  views.py : Here, all the objects from forms.py and models.py are imported here, and the actual functions are written here. Its the processing unit. \\
+\item  templates : All the templates are stored in this folder, which are required for the project. \\
+\item  db.sqlite3 : The database created when we ran the migrate command. \\
+\item  app.py : Runs the project on a django local server. It is the configuration file common to all the django apps. \\
+\item  manage.py : A command line utility for executing Django commands from within the project.\\
+\item  settings.py : Contains the configuration information for the project.\\
+\item  urls.py : Contains project level url declarations.\\
+\item  wsgi.py : Enables WSGI compatible webservers to serve the project.\\
+\item  migrations : The folder where django stores the migrations or changes to the database.\\
+\item  admin.py : Used to register the models with the django admin application.\\
+\item  tests.py : contains the test procedures which'll be run when testing the app.\\
+\item  static : Contains all the css,js and images required for the project.\\
+\item  utils.py : Contains the utility function required to render the html as pdf.\\
+\end{enumerate}
+
+
+\subsection{\textbf{Understanding Code}}
+\begin{flushleft}
+We will understand the code for Telephone-Reimbursement form. The similar code is used for other forms.
+\end{flushleft}
+
+
+\subsubsection{\textbf{models.py}}
+\begin{flushleft}
+\hrule 
+class Telephone\_Reim(models.Model):\\
+\qquad    name        = models.CharField(max\_length=120)\\
+\qquad    amount      = models . DecimalField (decimal\_places=2,max\_digits=1000) \\
+\qquad    Bank\_name\_branch = models.TextField()\\
+
+\hrule \par
+Here,we create our model which is a data object that maps the apps data to the database. We define the fields for the model. These will have a corresponding field in the database table that django creates for the model.
+DecimalField() indicates that only a decimal value is valid for this field. CharField() and TextField() enables us to enter both characters and numbers.
+\end{flushleft}
+
+
+
+
+\subsubsection{\textbf{admin.py}}
+\begin{flushleft}
+\hrule
+from .models import Telephone\_Reim
+admin.site.register(Telephone\_Reim)
+\hrule
+Here,our model is registered with the admin. Try python manage.py createsuperuser to view inside the admin page.
+\end{flushleft}
+
+
+
+
+\subsubsection{\textbf{apps.py}}
+\begin{flushleft}
+\hrule
+class TelephoneReimConfig(AppConfig):
+\qquad name = 'telephone\_reim'
+\hrule
+This contains a configuration class named after the app.
+\end{flushleft}
+
+
+\subsubsection{\textbf{forms.py}}
+\begin{flushleft}
+\hrule
+from .models import Telephone\_Reim
+\\
+class TelephoneForm(forms.ModelForm):\\
+\qquad\qquad    name        = forms.CharField ( label = 'Name' , widget = forms.TextInput ( attrs = { "placeholder" : "Your Name" }))\\
+\qquad \qquad   Bank\_name\_branch = forms.CharField ( widget = forms.Textarea ( attrs = { "placeholder" : "Bank's Name and Branch" ,  "rows"       : 5 , 'cols'       : 19 }))\\
+\qquad \qquad   amount       = forms.DecimalField ( initial = 0.00 )\\
+
+\qquad \qquad   class Meta:\\
+\qquad\qquad \qquad       model = Telephone\_Reim\\
+\qquad\qquad \qquad       fields = ['name' , 'Bank\_name\_branch' ,  'amount' , ]
+
+
+\hrule
+This contains a form which is to be rendered to the user based on the model created. Any alterations required can be specified.The fields which are to be displayed in the form are specified as a python list.
+\end{flushleft}
+
+
+
+
+\subsubsection{\textbf{urls.py}}
+\begin{flushleft}
+\hrule
+from .views import telephone\_create\_view , telephone\_update\_view , telephone\_delete\_view , GeneratePDF\\
+app\_name = 'telephone'\\
+urlpatterns = [\\
+\qquad    path(' pdfsec/$<str:tit>$/$<str:emp>$/  ' , GeneratePDF , name = 'telephone-pdf' ),\\
+\qquad    path(' create/ ' , telephone\_create\_view , name = 'telephone-create' ),\\
+\qquad    path(' delete/$<str:tit>$/$<str:emp>$/ ' , telephone\_delete\_view , name = 'telephone-delete' ),\\
+\qquad    path(' update/$<str:tit>$/$<str:emp>$/ ' , telephone\_update\_view , name = 'telephone-update' ),\\
+]
+
+\hrule
+This contains the url-configuration required for the app. We import the required views which are associated with each url. An optional name parameter can be used for quick reference to the url. Here $<str:tit>$ is a path converter which converts the captured data into a string parameter and is passed to the corresponding view.
+\end{flushleft}
+
+
+\subsubsection{\textbf{views.py}}
+\begin{flushleft}
+\hrule
+@login\_required(login\_url="/login/create\_acc/")\\
+def telephone\_create\_view(request):\\
+\qquad    form = TelephoneForm(request.POST or None)\\
+\qquad    if form.is\_valid():\\
+\qquad\qquad        form.save()\\
+\qquad\qquad        form = TelephoneForm()\\
+
+\qquad    context = {\\
+\qquad\qquad        'form': form\\
+\qquad    }\\
+
+    return render ( request , "telephone/telephone\_create.html" , context )\\
+
+\hrule
+The decorator @login\_required(login\_url="/login/create\_acc/") ensures that without a successful login the user can't view the specified page, there-by ensuring authenticity of users.
+In this file, the functions are executed. Functions such as viewing the form, create a new form, update and delete the forms are executed here. \par
+First, we import all the forms and models. We check whether the user is trying the get or post data into the html. If the request method is GET,
+ then the form is passed on to the template and the template is viewed. \par
+
+If the user is trying to post information into database, we check whether its a POST request, if it is, then we take the form data, and create a object for
+ the corresponding class. We store that data into the object. Now, the object 'form' is saved in the database using the command form.save(), and is passed as a dictionary to the required html template.\par
+ 
+ For the views related to deletion, update and pdf-generation if a valid username and employee-id isn't provided, the user is redirected to login page using Django's redirect() function.
+
+\end{flushleft}
+\par
+\subsubsection{\textbf{telephone\_create\_form.html (Template)}}
+This html template consists of the form that browser submits the data to the database.\par
+ The sole purpose of these templates is to accept data from the browser and submit it to the database. After pressing the submit button the corresponding function in views.py file 
+is executed, and the code checks for errors. If no error, data is stored as an entry into the database table.
+\par
+
+\subsubsection{\textbf{telephone\_reim\_form.html (Template)}}
+This html template consists of the form that is converted  to pdf when required. The values to the corresponding form fields are inserted using django template tags, which are obtained
+using the views.py .
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

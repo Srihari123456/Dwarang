@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/dashboard.css' %}" rel="stylesheet" type="text/css">
+<style>
+</style>
+
+<center>
+	<table >
+		<tr>
+			<td  style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='contingent_gateway' %}" style="decoration:none;color:black;">Contingent Expenditure</a>
+			</td>
+			<td style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='telephone_gateway' %}" style="decoration:none;color:black;">Telephone Reimbursement</a>
+			</td>
+			<td  style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='certa_gateway' %}" style="decoration:none;color:black;">Certificate - A</a>
+			</td>
+	</tr>
+		<tr>
+			<td  style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='tabill_gateway' %}" style="decoration:none;color:black;">Travelling Allowance bill</a>
+			</td>
+			<td style="background-color:#ff9900;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='reimbursement_gateway' %}" style="decoration:none;color:black;">Reimbursement</a>
+			</td>
+			<td  style="background-color:#cc7a00;text-shadow:1px 1px 0 #444;">
+				<a href="{% url 'dashboard:actions' pg='travel_gateway' %}" style="decoration:none;color:black;">Tour Approval and TA Bill</a>
+			</td>
+		</tr>
+	</table>
+</center>
+{% endblock %}

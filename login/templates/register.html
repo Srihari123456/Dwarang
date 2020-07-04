@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% endblock %}
+{% block reg %}
+
+<h3 style="margin-left:7.5%;"><br>
+    <marquee style="behaviour:alternate;scrollamount:1;width:75%;color:gold;">Follow the instructions specified below for a successful registration.</marquee>
+
+
+<form action="." method="post" style="color:yellow;">
+    {% csrf_token %}
+    {{form}}
+    <br>
+
+    <input type="submit" value="REGISTER" style="margin-left:37%;background-color:orange;">
+
+</form>
+
+</h3>
+{% endblock reg%}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="." method=POST style="margin-top:20%;"  xmlns="http://www.w3.org/1999/html">{% csrf_token %}
+<center><h1 style="color:yellow;">Are you sure that you want to delete all the previous applications?</h1>
+	<input type="submit" value='Yes I am!' style="font-size:32px;background-color:orange;">
+		<button><a href="{% url 'dashboard:actions' pg='travel_gateway' %}" style="decoration:none;color:black;font-size:32px;background-color:orange;">No Rollback._.</a></button>
+</center>
+</form>
+<br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/create.css' %}" rel="stylesheet" type="text/css">
+
+<br><br>
+<center><h1 style="color:yellow;">REIMBURSEMENT FORM</h1></center><B>
+<form method='POST' >{% csrf_token %}
+<center>
+		<table style="color:gold;">
+			{% for field  in form %}
+				<tr>
+					<td>{{field.label_tag}}</td>
+					<td>{{field}}</td>
+				</tr>
+				{% if field.help_text %}
+					<center>
+						<small style="color:grey">{{field.help_text}}</small>
+					</center>
+				{% endif %}
+
+				{% for error  in field.errors %}
+					<center>
+						<p style="color:red">{{error}}</p>
+					</center>
+				{% endfor %}
+			{% endfor %}
+		</table>
+</center></B>
+			<center>
+	<input type='submit' value='Save' style="width:150px;background-color:#E16D33;color:white;" />
+			</center>
+</form>
+
+{% endblock %}

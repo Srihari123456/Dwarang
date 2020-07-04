@@ -1,0 +1,14 @@
+PyPDF2
+django>=3.0,<4.0
+pisa
+whitenoise
+psycopg2
+pytz
+sqlparse
+asgiref
+xhtml2pdf
+html5lib>=1.0
+Pillow
+reportlab
+six
+webencodings
