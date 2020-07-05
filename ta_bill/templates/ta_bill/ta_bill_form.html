@@ -115,7 +115,7 @@ Basic Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 
 	<tr>
 	<td colspan=6 style='text-align:right;padding-right:25px;padding-top:5px'>Total claimed(A)</td>
-	<td style="padding-left:10px;padding-top:10px;width=115px">{{ object.Total_amount_A }}</td>
+	<td style="padding-left:10px;padding-top:10px;width=115px">{{ tot_a }}</td>
 	</tr>
 
 
@@ -158,7 +158,7 @@ Basic Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 
 	<tr>
 	<td colspan=3 style='text-align:right;padding-right:25px;padding-top:5px'>Total claimed(B)</td>
-	<td style="padding-left:10px;padding-top:10px;">{{ object.Total_amount_B }}</td>
+	<td style="padding-left:10px;padding-top:10px;">{{ tot_b }}</td>
 	</tr>
 
 
@@ -167,11 +167,11 @@ Basic Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 </table><br><br><br><br>
 No.of.enclosures &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {{object.no_of_enclosures}}<br>
 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{object.enclosure_date}}<br>
-Total amount eligible &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {{object.Eligible_Amount}}<br>
-Advance Draw(C) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{object.AdvanceDraw}}<br>
-Net Claim Admissible  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{object.Net_Claim_Admissible}} <br>
-Excess to be paid by IIT-H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{object.To_be_paid_by_iith}}<br>
-Excess to be recovered by IIT-H &nbsp;:&nbsp;{{object.To_be_recovered_by_iith}}<br>
+Total amount eligible &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; __________<br>
+Advance Draw &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;__________<br>
+Net Claim Admissible  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;__________ <br>
+Excess to be paid by IIT-H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;__________<br>
+Excess to be recovered by IIT-H &nbsp;:&nbsp;__________<br>
 <p style="margin-left:425px">
 Payment Voucher No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -197,8 +197,8 @@ Deputy Registrar
 		</ul>
 		<br><br>
 		<p style="text-align:right">Employee/Student/Invitee</p>
-		Pay/Recover Rs.{{object.amount}} <br>
-		(Rupees {{object.amt_in_words}} only).<br><br><br>
+		Pay/Recover Rs.____________ <br>
+		(Rupees ___________ only).<br><br><br>
 		Dealing Assistant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Deputy Registrar
 <hr style="border: 10px solid gold;border-radius: 5px;">

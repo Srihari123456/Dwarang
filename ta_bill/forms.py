@@ -48,7 +48,7 @@ class TAForm(forms.ModelForm):
     ticket_no_3 = forms.CharField(required=False,label='Ticket Number',widget=forms.TextInput(attrs={"placeholder":"Ticket Number - 3"})) #max_length required
     fare_3 =  forms.DecimalField(label='Fare',required=False,initial=0.00)
 
-    Total_amount_A  = forms.DecimalField(label='Total Amount(A)*',initial=0.00)
+    #Total_amount_A  = forms.DecimalField(label='Total Amount(A)*',initial=0.00)
     
     other_exp_item_1 = forms.CharField(label='Expenditure Item*',widget=forms.TextInput(attrs={"placeholder":"Item of Expenditure"})) #max_length required
     other_exp_amount_1 =  forms.DecimalField(label='Amount*',initial=0.00)
@@ -63,19 +63,19 @@ class TAForm(forms.ModelForm):
     other_exp_item_3 =  forms.CharField(required=False,label='Expenditure Item',widget=forms.TextInput(attrs={"placeholder":"Item of Expenditure"})) #max_length required
     other_exp_amount_3 =  forms.DecimalField(label='Amount',required=False,initial=0.00)
     other_exp_billdetails_3 = forms.CharField(required=False,label='Cash Bill Details',widget=forms.TextInput(attrs={"placeholder":"Cash Bill Details"})) #max_length required
-    Total_amount_B = forms.DecimalField(label='Total Amount(B)*',initial=0.00)
+    #Total_amount_B = forms.DecimalField(label='Total Amount(B)*',initial=0.00)
     
     no_of_enclosures = forms.IntegerField(label='No.of Enclosures*',)
     enclosure_date = forms.CharField(label='Enclosure Date*',
                                  widget=forms.TextInput(attrs={"placeholder": "Enclosure Date"}))
-    Eligible_Amount =  forms.DecimalField(label='Eligible Amount*',initial=0.00)
-    AdvanceDraw =  forms.DecimalField(label='Advance Draw*',initial=0.00)
-    Net_Claim_Admissible =  forms.DecimalField(label='Net Claim Admissible*',initial=0.00)
-    To_be_paid_by_iith =  forms.DecimalField(label='To be paid by iith*',initial=0.00)
-    To_be_recovered_by_iith =  forms.DecimalField(label='To be recovered by iith*',initial=0.00)
+    #Eligible_Amount =  forms.DecimalField(label='Eligible Amount*',initial=0.00)
+    #AdvanceDraw =  forms.DecimalField(label='Advance Draw*',initial=0.00)
+    #Net_Claim_Admissible =  forms.DecimalField(label='Net Claim Admissible*',initial=0.00)
+    #To_be_paid_by_iith =  forms.DecimalField(label='To be paid by iith*',initial=0.00)
+    #To_be_recovered_by_iith =  forms.DecimalField(label='To be recovered by iith*',initial=0.00)
     
-    amount =  forms.DecimalField(initial=0.00,label='Amount*')
-    amt_in_words = forms.CharField(label='Amount in words*',widget=forms.TextInput(attrs={"placeholder":"Amount in words"})) #max_length required
+    #amount =  forms.DecimalField(initial=0.00,label='Amount*')
+    #amt_in_words = forms.CharField(label='Amount in words*',widget=forms.TextInput(attrs={"placeholder":"Amount in words"})) #max_length required
     
     IFSC_Code   = forms.CharField(label='IFSC Code*',widget=forms.TextInput(attrs={"placeholder":"IFSC Code"})) #max_length required
     Bank_name_branch = forms.CharField(label='Bank Name and Branch*',widget=forms.Textarea(attrs={"placeholder":"Bank name branch","class"      : "new-class-name two",
@@ -97,14 +97,14 @@ class TAForm(forms.ModelForm):
             'mode_of_journey_3', 'ticket_no_3', 'fare_3',
 
 
-            'Total_amount_A',
+            #'Total_amount_A',
             'other_exp_item_1',            'other_exp_amount_1',            'other_exp_billdetails_1',
             'other_exp_item_2',            'other_exp_amount_2',            'other_exp_billdetails_2',
             'other_exp_item_3',            'other_exp_amount_3',            'other_exp_billdetails_3',            
-            'Total_amount_B',
-            'no_of_enclosures',  'enclosure_date',    'Eligible_Amount',    'AdvanceDraw',
-            'Net_Claim_Admissible', 'To_be_paid_by_iith', 'To_be_recovered_by_iith',
-            'amount',   'amt_in_words',
+            #'Total_amount_B',
+            'no_of_enclosures',  'enclosure_date',    #'Eligible_Amount',    'AdvanceDraw',
+            #'Net_Claim_Admissible', 'To_be_paid_by_iith', 'To_be_recovered_by_iith',
+            #'amount',   'amt_in_words',
             'IFSC_Code',            'Bank_name_branch',            'Bank_account_number',
         ]
 """        

@@ -21,8 +21,10 @@ def ta_create_view(request):
         form.save()
         form = TAForm()
 
+
     context = {
-        'form' : form
+        'form' : form,
+
     }
     return render(request,"ta_bill/ta_create.html",context)
 
@@ -109,6 +111,8 @@ def GeneratePDF(request,tit,emp, *args, **kwargs):
             "today": datetime.date.today(),
             "n":obj.name,
             "base_dir":BASE_DIR,
+            'tot_a': obj.fare_1 + obj.fare_2 + obj.fare_3,
+            'tot_b': obj.other_exp_amount_1 + obj.other_exp_amount_2 + obj.other_exp_amount_3,
         }
         if obj.employee_id != emp:
             return redirect("../../../../dashboard/actions/tabill_gateway")
