@@ -109,6 +109,8 @@ def GeneratePDF(request,tit,emp, *args, **kwargs):
             "today": datetime.date.today(),
             "n": obj.name,
             "base_dir": BASE_DIR,
+            'total_amount':obj.Consult_fee1 + obj.Consult_fee2  + obj.Injection_fee1 + obj.Injection_fee2 +
+            obj.Price1 + obj.Price2 + obj.Diagnostic_Test_price1 + obj.Diagnostic_Test_price2,
         }
         if obj.employee_id != emp:
             return redirect("../../../../dashboard/actions/certa_gateway")

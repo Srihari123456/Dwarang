@@ -42,5 +42,5 @@ class Cert_A(models.Model):
    
     RefDoc =  models.CharField(max_length=120) #max_length required
     station = models.CharField(max_length=120) #max_length required
-    Total_amount      = models.DecimalField(decimal_places=2,max_digits=1000)
+    #Total_amount      = models.DecimalField(decimal_places=2,max_digits=1000)
      

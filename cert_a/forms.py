@@ -46,7 +46,7 @@ class CertForm(forms.ModelForm):
     RefDoc =  forms.CharField(max_length=120,label='Doctor Referred*') #max_length required
     station = forms.CharField(max_length=120,label='Station*') #max_length required
     
-    Total_amount       = forms.DecimalField(label='Total Amount*',initial=0.00)
+    #Total_amount       = forms.DecimalField(label='Total Amount*',initial=0.00)
     class Meta:
         model = Cert_A
         fields = [
@@ -68,5 +68,5 @@ class CertForm(forms.ModelForm):
             'DiagTest_name2','DiagTest_center2','Diagnostic_Test_price2',
             'RefDoc',
             'station',
-            'Total_amount',
+            #'Total_amount',
         ]
