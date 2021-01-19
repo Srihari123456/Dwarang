@@ -1,8 +1,6 @@
 # Dwarang
 A Web Based Python-Django Framework For Official Purposes
 
-## Check out dwarang.herokuapp.com
-
 ## Installation:
 Install pip and then install system-wide virtualenv PIP package.
 
